@@ -1,0 +1,14 @@
+#!/bin/bash
+dir=$(dirname "$0")
+export PATH=$PATH:/usr/local/bin:/opt/homebrew/bin
+#osascript -e "display dialog \"$dir\""
+cd "$dir/../Resources/Scripts"
+
+
+#if [ ! type -p wish8.6 ] ; then osascript -e "display dialog \"Cannot find wish8.6\""; fi
+#if [ ! type -p caffeinate ] ; then osascript -e "display dialog \"Cannot find caffeinate\""; fi
+#if [ ! -e AppMain.tcl ] ; then osascript -e "Cannot find AppMain.tcl"; fi
+#osascript -e 'display dialog "About to call..."'
+
+caffeinate wish8.6 AppMain.tcl || osascript -e 'display dialog "Sorry there was an error starting Mirrorboard"'
+wait

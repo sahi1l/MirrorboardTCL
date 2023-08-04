@@ -1,6 +1,0 @@
-#!/bin/bash
-dir=$(dirname $0)
-export PATH=$PATH:/usr/local/bin:/opt/homebrew/bin
-cd "$dir/../Resources/Scripts"
-caffeinate wish8.6 AppMain.tcl || osascript -e 'display dialog "Sorry there was an error starting Mirrorboard"'
-wait

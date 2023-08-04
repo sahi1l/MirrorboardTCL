@@ -20,7 +20,7 @@ frame .palette -bg grey -height 30
 frame .c -width [expr 2*$cX] -height [expr $numwidth+$cY]; #contains all canvases
 toplevel .mirror -width [expr 2*$cX] -height [expr $numwidth+$cY]
 wm title .mirror "*MIRROR*"
-wm title . "Whiteboard"
+wm title . "Mirrorboard"
 pack  .palette .c -side top -fill x
 set Nacross 2; #number of pages to show across on main display
 source mirror.tcl

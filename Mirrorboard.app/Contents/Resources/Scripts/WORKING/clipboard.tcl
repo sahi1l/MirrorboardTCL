@@ -1,5 +1,6 @@
 #Goal: from the current canvas, copy the drawn figure to the clipboard using screencapture
 #screencapture: -R captures rectange using format x,y,width,height
+#Not really working right now...
 
 proc alphabbox {w} {
     set bbox [regsub -all -- "-\[0-9\]+" [$w bbox all] "0"]

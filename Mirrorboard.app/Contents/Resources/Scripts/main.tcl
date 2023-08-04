@@ -256,5 +256,4 @@ NewPage
 NewPage
 ShowPages 1
 #Autosave
-source clipboard.tcl
 

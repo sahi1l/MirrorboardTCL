@@ -1,0 +1,20 @@
+/usr/local/bin/ps2pdf (YES)
+/Library/TeX/texbin/pdfjoin (YES)
+/usr/bin/open (Mac) (YES)
+
+
+
+
+File::init
+File::Duplicate
+File::AddExtension
+File::Save
+File::ClearAll
+File::PromptLoad
+File::Load
+File::Redraw
+File::Autosave
+File::UsePostScript
+File::SavePDF
+File::SaveToClipboard
+

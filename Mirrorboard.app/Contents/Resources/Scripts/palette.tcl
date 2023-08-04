@@ -1,4 +1,4 @@
-pack [label .help.buttons -text "1:color  2:white  3:pointer" -bg grey -fg white] -anchor w
+#pack [label .help.buttons -text "1:color  2:white  3:pointer" -bg grey -fg white] -anchor w
 set passivepointer 1
 proc TogglePP {} {
     global passivepointer lastpencolor currentpage
@@ -15,15 +15,13 @@ proc TogglePP {} {
 }
 #----PALETTE----------------------------------------
 foreach w [winfo children .palette] {destroy $w}
-pack [button .palette.prevpage -text "<<" -command "MovePage -1" -padx 10] -side left
-pack [button .palette.newpage -text "+" -command "NewPage" -padx 10] -side left
-pack [button .palette.toggle -text "1" -command "ToggleAcross" -padx 10] -side left
+pack [button .palette.prevpage -text "<<" -command "MovePage -1" -bg gray -padx 10] -side left
+pack [button .palette.newpage -text "+" -command "NewPage" -padx 2] -side left
+pack [button .palette.toggle -text "1" -command "ToggleAcross" -padx 2] -side left
 pack [button .palette.nextpage -text ">>" -command "MovePage 1" -padx 10] -side right
 pack [button .palette.clear -text "Clear" -command ClearCanvas] -side left
 bind . <Left> "MovePage -1"
 bind . <Right> "MovePage +1"
-#FIX: Clear should be undoable or at least have a confirm
-#set colors "black red blue purple white"
 set red #D81B1B
 set blue #1E88E5
 set yellow #FFC107
@@ -103,10 +101,6 @@ proc ToggleDash {} {
 SelectDash ""
 bind . <Command-d> {ToggleDash}
 ##########
-pack [label .palette.printed -text "" -fg blue] -side left
+pack [label .palette.printed -text "" -fg blue -bg gray] -side left
 pack [label .palette.autosave -text "Autosave?" -fg blue -bg grey] 
-#foreach cls "101 370" {
-#    pack [button .palette.save$cls  -text $cls -bg gray -borderwidth 0 -command "File::Save 0 /Users/sahill/www/class/$cls/Repository" -padx 0 -pady 0] -side left -anchor n -fill y 
-#}
-#bind .palette.autosave <1> {File::Autosave}
 File::Autosave

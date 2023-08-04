@@ -26,7 +26,7 @@ proc ToggleAcross {} {
     .palette.toggle config -text $Nacross
     set Nacross [expr 3-$Nacross] ; #either 1 or 2
     foreach n "prevpage newpage toggle nextpage" {
-        .palette.$n config -padx [expr 5*$Nacross]
+        .palette.$n config -padx [expr 4*$Nacross]
     }
     MovePage 0
 }
@@ -44,7 +44,7 @@ MakeMItem .mFile "Save as PDF" {File::SavePDF} p; bind . <Command-p> {File::Save
 MakeMItem .mFile "Save as Text" {File::Save 0} s; bind . <Command-s> {File::Save 0}
 MakeMItem .mFile "Load" {File::Load} o; bind . <Command-o> {File::Load}
 MakeMItem .mFile "Insert..." {File::PromptLoad} I; bind . <Command-I> {File::PromptLoad}
-MakeMItem .mFile "Save To Clipboard" {} c; bind . <Command-c> {File::SaveToClipboard}
+#MakeMItem .mFile "Save To Clipboard" {} c; bind . <Command-c> {File::SaveToClipboard}
 .menubar.mDisplay add separator
 MakeMItem .mDisplay "Previous Page" {MovePage -1} "Left"
 MakeMItem .mDisplay "Next Page" {MovePage +1} "Right"

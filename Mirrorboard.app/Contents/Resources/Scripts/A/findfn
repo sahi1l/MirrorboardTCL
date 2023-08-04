@@ -1,0 +1,4 @@
+(grep -n ^$1 *;
+grep -n '\['$1 *;
+grep -n '[{]'$1 *;
+grep -n '; *'$1 *;) | sort

@@ -1,0 +1,1 @@
+grep --color=none "proc " $1 | sed 's/^proc //g;s/ .*//g'
